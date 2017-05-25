@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="date"
+            type="android.databinding.ObservableField&lt;Date&gt;" />
+
+        <import type="java.util.Date" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+
+        <include
+            android:id="@+id/toolbar_holder"
+            layout="@layout/layout_toolbar"
+            bind:actionVisible="@{true}"
+            bind:title="@{@string/create_reservation}" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar_holder"
+            android:layout_margin="20dp"
+            android:digits="0123456789+"
+            android:gravity="center"
+            android:hint="@string/enter_mobile_number"
+            android:imeOptions="actionNext"
+            android:inputType="phone"
+            android:lines="1"
+            android:maxLength="30"
+            android:nextFocusRight="@+id/et_email" />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_phone"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:hint="@string/enter_email_address"
+            android:imeOptions="actionDone"
+            android:inputType="textEmailAddress"
+            android:lines="1"
+            android:maxLength="50" />
+
+        <EditText
+            android:id="@+id/et_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_email"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:hint="@string/select_reservation_date"
+            android:inputType="date"
+            android:lines="1"
+            bind:date="@{date}" />
+
+        <TextView
+            android:id="@+id/tv_people_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/numberPicker"
+            android:layout_alignStart="@+id/et_date"
+            android:layout_alignTop="@+id/numberPicker"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="67dp"
+            android:gravity="center"
+            android:text="@string/lable_people"
+            android:textSize="18sp" />
+
+
+        <com.hrules.horizontalnumberpicker.HorizontalNumberPicker
+            android:id="@+id/numberPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignEnd="@+id/et_date"
+            android:layout_below="@+id/et_date" />
+
+
+    </RelativeLayout>
+</layout>

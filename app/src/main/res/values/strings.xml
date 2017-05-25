@@ -1,0 +1,26 @@
+<resources>
+
+    <string name="app_name">RestaurantService</string>
+    <string name="action_settings">Settings</string>
+    <string name="select_reservation_date">Select reservation date</string>
+    <string name="reservations">Reservations</string>
+    <string name="people">People: %1s</string>
+    <string name="phone">Phone: %1s</string>
+    <string name="date_format">dd MMM yyyy HH:mm</string>
+    <string name="send_email">Send Email</string>
+    <string name="email_content" formatted="false">Hello \n we are sending this email regarding your reservation \n for %1d people in our restaurant on %2s. \n You will receive a call on %3s soon.\n Best Regards</string>
+    <string name="create_reservation">Create Reservation</string>
+    <string name="enter_mobile_number">Enter mobile number</string>
+    <string name="enter_email_address">Enter email</string>
+    <string name="number_people">Enter number of people</string>
+    <string name="lable_people">People :</string>
+    <string name="reservations_for">Reservation for %1s</string>
+    <string name="enter_admin_email_address">Enter admin email</string>
+    <string name="message_last_called_number">Last called number :</string>
+
+<!--Errors -->
+    <string name="error_invald_email">Invalid email</string>
+    <string name="error_fill_all_fields">Please fill all fields</string>
+    <string name="error_permission_calls_denied">Permission denied to read your calls</string>
+
+</resources>

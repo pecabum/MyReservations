@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.restaurants.interfaces.ReservationsInteractionListener" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar_holder"
+            layout="@layout/layout_toolbar"
+            bind:actionVisible="@{true}"
+            bind:icon="@{@drawable/ic_settings}"
+            bind:title="@{@string/reservations}" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_reservations"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar_holder"
+            android:clipToPadding="false"
+            android:paddingBottom="50dp"
+            android:paddingTop="10dp"
+            app:layoutManager="LinearLayoutManager"
+            tools:layout="@layout/layout_reservation_item" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_add_reservation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/fab_margin"
+            android:onClick="@{ () -> listener.onCreateReservationClicked()}"
+            app:srcCompat="@android:drawable/ic_menu_edit" />
+
+
+    </RelativeLayout>
+</layout>
